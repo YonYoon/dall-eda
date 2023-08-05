@@ -1,13 +1,10 @@
 import { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import Canvas from "components/canvas";
 import PromptForm from "components/prompt-form";
 import Dropzone from "components/dropzone";
 import Download from "components/download";
 import { XCircle as StartOverIcon } from "lucide-react";
-import { Code as CodeIcon } from "lucide-react";
-import { Rocket as RocketIcon } from "lucide-react";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -79,14 +76,29 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="h-screen flex justify-center items-center">
       <Head>
-        <title>Inpainting with Stable Diffusion &amp; Replicate</title>
+        <title>DALL•EDA</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
       <main className="container mx-auto p-5">
         {error && <div>{error}</div>}
+
+        <ol className="list-decimal pl-5 text-gray-500 text-sm mb-8 ml-80 whitespace-normal">
+          <li className="mb-2">
+            Enter a text prompt to generate an image, or upload your own starting
+            image.
+          </li>
+          <li className="mb-2">
+            Click and drag with your mouse to erase unwanted parts of the image.
+          </li>
+          <li className="mb-2">
+            Refine your text prompt (or leave it untouched) and let the model
+            generate a new inpainted image.
+          </li>
+        </ol>
+
 
         <div className="border-hairline max-w-[512px] mx-auto relative">
           <Dropzone
@@ -121,22 +133,6 @@ export default function Home() {
             )}
 
             <Download predictions={predictions} />
-            <Link href="https://replicate.com/stability-ai/stable-diffusion">
-              <a target="_blank" className="lil-button">
-                <RocketIcon className="icon" />
-                Run with an API
-              </a>
-            </Link>
-            <Link href="https://github.com/zeke/inpainter">
-              <a
-                className="lil-button"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <CodeIcon className="icon" />
-                View on GitHub
-              </a>
-            </Link>
           </div>
         </div>
       </main>

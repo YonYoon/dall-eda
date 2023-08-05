@@ -31,3 +31,15 @@ input {
   width: 1.1em;
   height: 1.1em;
 }
+
+.box {
+  border: 12px, solid, transparent;
+  border-radius: 24px;
+  background: 
+  linear-gradient(black, black) padding-box,
+  linear-gradient(
+    45deg,
+    #FF52E5,
+    #F6D242
+  ) border-box;
+}

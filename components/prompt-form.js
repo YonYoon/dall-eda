@@ -31,7 +31,7 @@ export default function PromptForm(props) {
         />
 
         <button
-          className="bg-black text-white rounded-r-md text-small inline-block px-3 flex-none"
+          className="bg-slate-900 text-white rounded-r-md text-small inline-block px-3 flex-none"
           type="submit"
         >
           Generate
