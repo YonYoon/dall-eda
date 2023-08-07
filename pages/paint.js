@@ -76,7 +76,7 @@ export default function Home() {
   };
 
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="max-w-[512px] mx-auto p-10 bg-white rounded-lg">
       <Head>
         <title>DALL•EDA</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -85,7 +85,7 @@ export default function Home() {
       <main className="container mx-auto p-5">
         {error && <div>{error}</div>}
 
-        <ol className="list-decimal pl-5 text-gray-500 text-sm mb-8 ml-80 whitespace-normal">
+        <ol className="list-decimal pl-5 text-gray-500 text-sm whitespace-normal">
           <li className="mb-2">
             Enter a text prompt to generate an image, or upload your own starting
             image.
